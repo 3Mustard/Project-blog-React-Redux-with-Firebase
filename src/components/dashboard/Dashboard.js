@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+//Component Imports 
 import Notifications from './Notifications';
 import ProjectList from '../projects/ProjectList';
 
