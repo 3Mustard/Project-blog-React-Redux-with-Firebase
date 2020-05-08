@@ -18,3 +18,5 @@ class Deashboard extends Component {
         )
     }
 }
+
+export default Deashboard;
