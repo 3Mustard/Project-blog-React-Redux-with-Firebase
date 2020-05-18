@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class SignIn extends Component {
     state = {
@@ -39,4 +39,4 @@ class SignIn extends Component {
     }
 }
 
-export default SignIn
+export default SignIn;
