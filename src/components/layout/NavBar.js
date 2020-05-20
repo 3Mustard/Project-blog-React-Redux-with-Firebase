@@ -6,7 +6,7 @@ import SignedOutLinks from './SignedOutLinks';
 
 const NavBar = () => {
     return (
-        <nav className="nav-wrapper grey darken-3">
+        <nav className="nav-wrapper grey darken-3 navbar">
             <div className="container">
                 <Link to='/' className="brand-logo">트와이스</Link>
                 <SignedInLinks />

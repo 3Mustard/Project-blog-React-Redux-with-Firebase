@@ -14,6 +14,7 @@ body {
 form {
   padding: 20px;
   margin-top: 50px;
+  opacity: 0.5;
 }
 
 form button, form h5{
@@ -33,4 +34,12 @@ textarea.materialize-textarea:focus:not([readonly]) + label,
 input[type=email]:not(.browser-default):focus:not([readonly]) + label,
 input[type=password]:not(.browser-default):focus:not([readonly]) + label{
   color: #ec407a !important;
+}
+
+.project-summary {
+  opacity: 0.5;
+}
+
+.project-details {
+  opacity: 0.8;
 }
