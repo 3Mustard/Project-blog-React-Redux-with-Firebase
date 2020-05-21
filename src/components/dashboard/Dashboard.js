@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 
+//function imports
+import { connect } from 'react-redux';
+
 //Component Imports 
 import Notifications from './Notifications';
 import ProjectList from '../projects/ProjectList';
 
 class Deashboard extends Component {
     render(){
+        console.log(this.props);
         return (
             <div className="dashboard container">
                 <div className="row">
@@ -21,4 +25,10 @@ class Deashboard extends Component {
     }
 }
 
-export default Deashboard;
+const mapStateToProps = (state) => {
+    return {
+        projects: state.project.projects
+    }
+}
+
+export default connect(mapStateToProps)(Deashboard);
