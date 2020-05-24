@@ -16,7 +16,7 @@ var firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.firestore();
+  firebase.firestore().settings({ experimentalForceLongPolling: true });
   firebase.analytics();
 
   export default firebase;
