@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { compose } from 'redux';
+
+//firestore imports
+import { firestoreConnect } from 'react-redux-firebase';
 
 //function imports
 import { connect } from 'react-redux';
@@ -29,8 +33,13 @@ class Deashboard extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        projects: state.project.projects
+        projects: state.firestore.ordered.projects
     }
 }
 
-export default connect(mapStateToProps)(Deashboard);
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([
+        { collection: 'projects' }
+    ])
+)(Deashboard);
