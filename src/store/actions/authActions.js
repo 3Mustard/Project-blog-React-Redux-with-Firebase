@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 export const signIn = (credentials) => {
-    return (dispatch, getState) => {
+    return (dispatch) => {
          firebase.auth().signInWithEmailAndPassword(
              credentials.email,
              credentials.password
@@ -11,5 +11,13 @@ export const signIn = (credentials) => {
          }).catch((error) => {
              dispatch({ type: 'LOGIN_ERROR', error });
          });
+    }
+}
+
+export const signOut = () => {
+    return (dispatch) => {
+        firebase.auth().signOut().then(() => {
+            dispatch({ type: 'SIGNOUT_SUCCESS' });
+        });
     }
 }
