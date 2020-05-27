@@ -8,6 +8,7 @@ import CreateProject from './components/projects/CreateProjects';
 import ProjectDetails from './components/projects/ProjectDetails';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
+import PrivateRoute from './components/auth/PrivateRoute';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <div className="App">
         <NavBar />
         <Switch>
-          <Route  exact path='/' component={Dashboard} />
+          <PrivateRoute  exact path='/' component={Dashboard} />
           <Route path='/project/:id' component={ProjectDetails} />
           <Route path='/signin' component={SignIn} />
           <Route path='/signup' component={SignUp} />

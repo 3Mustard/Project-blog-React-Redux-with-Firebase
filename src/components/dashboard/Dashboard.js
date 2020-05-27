@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { compose } from 'redux';
-import { Redirect } from 'react-router-dom';
 import { firestoreConnect } from 'react-redux-firebase';
 import { connect } from 'react-redux';
 import Notifications from './Notifications';
@@ -8,9 +7,7 @@ import ProjectList from '../projects/ProjectList';
 
 class Deashboard extends Component {
     render(){
-        const { projects, auth } = this.props;
-        if (!auth.uid) return <Redirect to='/signin' />
-
+        const { projects } = this.props;
         return (
             <div className="dashboard container">
                 <div className="row">
@@ -29,7 +26,6 @@ class Deashboard extends Component {
 const mapStateToProps = (state) => {
     return {
         projects: state.firestore.ordered.projects,
-        auth: state.firebase.auth
     }
 }
 
