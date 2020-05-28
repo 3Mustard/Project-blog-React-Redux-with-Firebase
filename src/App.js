@@ -17,14 +17,14 @@ function App() {
         <NavBar />
         <Switch>
           <PrivateRoute  exact path='/' component={Dashboard} />
-          <Route path='/project/:id' component={ProjectDetails} />
+          <Route path='/project/:id' component={ProjectDetails} /> 
           <Route path='/signin' component={SignIn} />
           <Route path='/signup' component={SignUp} />
           <Route path='/new/project' component={CreateProject} />
         </Switch>
       </div>
     </BrowserRouter>
-  );
+  )
 }
 
 export default App;
