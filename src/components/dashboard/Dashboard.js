@@ -9,8 +9,7 @@ import ProjectList from '../projects/ProjectList';
 class Deashboard extends Component {
     render(){
         const { projects, auth } = this.props;
-
-        if (!auth.uid) return <Redirect to="/signIn" />;
+        if (!auth.uid) return <Redirect to="/signin" />;
         
         return (
             <div className="dashboard container">
