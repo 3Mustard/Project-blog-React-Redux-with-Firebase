@@ -28,10 +28,10 @@ exports.projectCreated = functions.firestore
 exports.userJoined = functions.auth.user()
     .onCreate(user => {
         
-        return admin.firestore.collection('users')
+        return admin.firestore().collection('users')
         .doc(user.uid).get().then(document => {
 
-            const newUser = doc.data();
+            const newUser = document.data();
             const notification = {
                 content: 'Joined Once',
                 user: `${newUser.firstName} ${newUser.lastName}`,
