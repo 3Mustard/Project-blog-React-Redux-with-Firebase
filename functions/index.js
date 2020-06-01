@@ -23,4 +23,20 @@ exports.projectCreated = functions.firestore
             time: admin.firestore.FieldValue.serverTimestamp()
         }
         return createNotification(notification);
-});
+    });
+
+exports.userJoined = functions.auth.user()
+    .onCreate(user => {
+        
+        return admin.firestore.collection('users')
+        .doc(user.uid).get().then(document => {
+
+            const newUser = doc.data();
+            const notification = {
+                content: 'Joined Once',
+                user: `${newUser.firstName} ${newUser.lastName}`,
+                time: admin.firestore.FieldValue.serverTimestamp()
+            }
+            return createNotification(notification);
+        });
+    });
