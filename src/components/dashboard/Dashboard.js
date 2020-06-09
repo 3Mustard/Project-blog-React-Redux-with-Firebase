@@ -5,10 +5,11 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { Redirect } from 'react-router-dom';
 import Notifications from './Notifications';
 import ProjectList from '../projects/ProjectList';
-import IdolList from '../idols/IdolList';
+import IdolList from '../idols/IdolList'
 
 class Deashboard extends Component {
     render(){
+        console.log(this.props)
         const { projects, idols, notifications, auth } = this.props;
         if (!auth.uid) return <Redirect to="/signin" />;
         
@@ -21,12 +22,8 @@ class Deashboard extends Component {
                     <div className="col s12 m5 offset-m1">
                         <Notifications notifications={notifications}/>
                     </div>
-                </div>
-            </div>
-            <div className="container">
-                <div className="row">
-                    <div className="col s12 m6">
-                        <IdolList idols={idols} />
+                    <div className="col s12 m5 offset-m1">
+                        <IdolList idols={idols}/>
                     </div>
                 </div>
             </div>
