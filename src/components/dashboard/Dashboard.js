@@ -8,7 +8,7 @@ import ProjectList from '../projects/ProjectList';
 
 class Deashboard extends Component {
     render(){
-        const { projects, notifications, auth } = this.props;
+        const { projects, idols, notifications, auth } = this.props;
         if (!auth.uid) return <Redirect to="/signin" />;
         
         return (
@@ -29,6 +29,7 @@ class Deashboard extends Component {
 const mapStateToProps = (state) => {
     return {
         projects: state.firestore.ordered.projects,
+        idols: state.firestore.ordered.idols,
         auth: state.firebase.auth,
         notifications: state.firestore.ordered.notifications
     }
@@ -38,6 +39,7 @@ export default compose(
     connect(mapStateToProps),
     firestoreConnect([
         { collection: 'projects', orderBy: ['createdAt', 'desc'] },
-        { collection: 'notifications', limit: 3, orderBy: ['time', 'desc']}
+        { collection: 'notifications', limit: 3, orderBy: ['time', 'desc']},
+        { collection: 'idols', orderBy: ['birthName', 'desc'] }
     ])
 )(Deashboard);
