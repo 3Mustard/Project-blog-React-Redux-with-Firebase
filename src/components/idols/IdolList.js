@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import IdolDetails from './IdolDetails';
 
 const IdolList = ({idols}) => {
     return (
@@ -10,7 +9,9 @@ const IdolList = ({idols}) => {
                     // <Link to={'/project/' + project.id} key={project.id} >
                     //     <ProjectSummary project={project} />
                     // </Link>
-                    <p>idol</p>
+                    <Link to={'/idol/' + idol.id} key={idol.id} >
+                        <p>idol</p>
+                    </Link>
                 )
             })}
         </div>
