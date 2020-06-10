@@ -15,7 +15,18 @@ const IdolDetails = (props) => {
         <div className="card z-depth-0">
           <div className="card-content">
             <span className="card-title">{ idol.stageName }</span>
-            <p>content</p>
+            <p>birth name: { idol.birthName }</p>
+            <p>{ idol.englishName ? `english name ${idol.englishName}` : null }</p>
+            <p>birthplace: { idol.birthplace }</p>
+            <p>birthday: {idol.birthday }</p>
+            <div>
+                <p>{ idol.position.length > 1 ? "positions" : "position" }</p>
+                { idol.position.map(pos => {
+                    return <p>{pos}</p>
+                })}
+            </div>
+            <p>star sign {idol.starSign}</p>
+            <p>blood type {idol.bloodType}</p>
           </div>
           <div className="card-action grey lighten-4 grey-text">
             <div>Posted by</div>

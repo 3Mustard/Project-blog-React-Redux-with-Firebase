@@ -6,12 +6,15 @@ const IdolList = ({idols}) => {
         <div className="idol-list section">
             {idols && idols.map(idol => {
                 return (
-                    // <Link to={'/project/' + project.id} key={project.id} >
-                    //     <ProjectSummary project={project} />
-                    // </Link>
-                    <Link to={'/idol/' + idol.id} key={idol.id} >
-                        <p>idol</p>
-                    </Link>
+                    <div className="section">
+                        <div className="card">
+                            <div className="card-content">
+                                <Link to={'/idol/' + idol.id} key={idol.id} >
+                                    {idol.stageName}
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
                 )
             })}
         </div>
