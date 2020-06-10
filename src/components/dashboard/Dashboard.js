@@ -9,7 +9,6 @@ import IdolList from '../idols/IdolList'
 
 class Deashboard extends Component {
     render(){
-        console.log(this.props)
         const { projects, idols, notifications, auth } = this.props;
         if (!auth.uid) return <Redirect to="/signin" />;
         
