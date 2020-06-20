@@ -32,14 +32,12 @@ class SignIn extends Component {
                             { authError ? <h5>{authError}</h5> : null }
                     </div>
                     <div className="input-field">
-                        <label htmlFor="email">Email</label>
                         <input type="email" id="email" onChange={this.handleChange}/>
-                        <i class="material-icons right">email</i>
+                        <label htmlFor="email">Email</label>
                     </div>
                     <div className="input-field">
                         <label htmlFor="password">Password</label>
                         <input type="password" id="password" onChange={this.handleChange}/>
-                        <i class="material-icons right">lock</i>
                     </div>
                     <div className="input-field">
                         <button className="btn pink lighten-1 z-depth-0">Login</button>

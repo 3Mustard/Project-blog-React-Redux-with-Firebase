@@ -5,7 +5,6 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { Redirect } from 'react-router-dom';
 import Notifications from './Notifications';
 import ProjectList from '../projects/ProjectList';
-import IdolList from '../idols/IdolList'
 
 class Deashboard extends Component {
     render(){
@@ -21,9 +20,6 @@ class Deashboard extends Component {
                     <div className="col s12 m5 offset-m1">
                         <Notifications notifications={notifications}/>
                     </div>
-                    <div className="col s12 m5 offset-m1">
-                        <IdolList idols={idols}/>
-                    </div>
                 </div>
             </div>
         )
@@ -33,7 +29,6 @@ class Deashboard extends Component {
 const mapStateToProps = (state) => {
     return {
         projects: state.firestore.ordered.projects,
-        idols: state.firestore.ordered.idols,
         auth: state.firebase.auth,
         notifications: state.firestore.ordered.notifications
     }
@@ -44,6 +39,5 @@ export default compose(
     firestoreConnect([
         { collection: 'projects', orderBy: ['createdAt', 'desc'] },
         { collection: 'notifications', limit: 3, orderBy: ['time', 'desc']},
-        { collection: 'idols', orderBy: ['birthName', 'desc'] }
     ])
 )(Deashboard);
