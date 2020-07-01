@@ -8,7 +8,8 @@ class SignUp extends Component {
         email: '',
         password: '',
         firstName: '',
-        lastName: ''
+        lastName: '',
+        profilePicture: null
     }
 
     handleChange = (e) => {
@@ -18,12 +19,13 @@ class SignUp extends Component {
     }
 
     handleFileChange = (e) => {
-        
+        this.setState({ profilePicture: e.target.files[0] });
     }
 
     handleSubmit = (e) => {
+        console.log(this.state.profilePicture);
         e.preventDefault();
-        this.props.signUp(this.state);
+       // this.props.signUp(this.state);
     }
 
     render() {
