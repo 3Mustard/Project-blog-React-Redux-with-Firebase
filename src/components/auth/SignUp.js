@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/actions/authActions';
-import FileField from '../forms/FileField';
 
 class SignUp extends Component {
     state = {
@@ -16,6 +15,10 @@ class SignUp extends Component {
         this.setState({
             [e.target.id]: e.target.value
         });
+    }
+
+    handleFileChange = (e) => {
+        
     }
 
     handleSubmit = (e) => {
@@ -51,8 +54,8 @@ class SignUp extends Component {
                         <input type="text" id="lastName" onChange={this.handleChange}/>
                     </div>
                     <div className="input-field">
-                        <FileField />
-                    </div>   
+                        <input type="file" id="profilePicture" onChange={this.handleFileChange}/>
+                    </div>
                     <div className="input-field">
                         <button className="btn pink lighten-1 z-depth-0">Login</button>
                     </div>                
