@@ -6,9 +6,9 @@ import { Redirect } from 'react-router-dom';
 import Notifications from './Notifications';
 import ProjectList from '../projects/ProjectList';
 
-class Deashboard extends Component {
+class Dashboard extends Component {
     render(){
-        const { projects, idols, notifications, auth } = this.props;
+        const { projects, notifications, auth } = this.props;
         if (!auth.uid) return <Redirect to="/signin" />;
         
         return (
@@ -40,4 +40,4 @@ export default compose(
         { collection: 'projects', orderBy: ['createdAt', 'desc'] },
         { collection: 'notifications', limit: 3, orderBy: ['time', 'desc']},
     ])
-)(Deashboard);
+)(Dashboard);

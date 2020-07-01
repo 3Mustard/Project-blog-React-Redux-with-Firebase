@@ -10,7 +10,7 @@ const NavBar = (props) => {
     return (
         <nav className="nav-wrapper grey darken-3 navbar">
             <div className="container">
-                <Link to='/' className="brand-logo">트와이스</Link>
+                <Link to='/' className="brand-logo">Blog</Link>
                 { auth.isLoaded && links }
             </div>
         </nav>   
@@ -18,7 +18,6 @@ const NavBar = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         auth: state.firebase.auth,
         profile: state.firebase.profile
