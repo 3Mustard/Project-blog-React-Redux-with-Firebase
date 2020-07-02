@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css' ;
 
-export default class TestComponent extends Component {
+class MaterializeTestComponent extends Component {
 
     componentDidMount(){
         document.addEventListener('DOMContentLoaded', function() {
@@ -35,3 +35,5 @@ export default class TestComponent extends Component {
         )
     }
 }
+
+export default MaterializeTestComponent;

@@ -3,6 +3,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { Redirect } from 'react-router-dom';
+// Components
 import Notifications from './Notifications';
 import ProjectList from '../projects/ProjectList';
 

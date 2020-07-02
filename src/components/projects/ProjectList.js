@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-//Component Imports 
+// Components
 import ProjectSummary from './ProjectSummary';
 
 const ProjectList = ({projects}) => {

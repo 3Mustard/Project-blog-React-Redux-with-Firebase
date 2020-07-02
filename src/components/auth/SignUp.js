@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/actions/authActions';
+// Components
 import PicturePreview from '../misc/PicturePreview';
 
 class SignUp extends Component {
