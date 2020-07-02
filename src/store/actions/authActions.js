@@ -35,11 +35,12 @@ export const signUp = (userInfo) => {
         ).then((response) => {
             //get time is used to generate a random id, this is BAD in production. Please change.
             storageRef.child(`profile/${new Date().getTime()}`).put(profilePicture).then((snapshot) => {
-                return firestore().collection('users').doc(response.user.uid).set({
+                console.log(snapshot)
+                firestore().collection('users').doc(response.user.uid).set({
                     firstName: firstName,
                     lastName: lastName,
                     initials: firstName[0] + lastName[0],
-                    picture: snapshot.metadata.downloadURLS
+                    picture: snapshot.metadata.fullPath
                 });
             });
         }).then(() => {
