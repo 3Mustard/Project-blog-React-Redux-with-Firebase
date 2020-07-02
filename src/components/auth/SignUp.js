@@ -67,7 +67,7 @@ class SignUp extends Component {
                     </div>
                     <div className="input-field">
                         <input type="file" id="profilePicture" onChange={this.handleFileChange}/>
-                        <PicturePreview pictureURL={this.state.pictureURL}/>
+                        { this.state.pictureURL ? <PicturePreview pictureURL={this.state.pictureURL}/> : null }
                     </div>
                     <div className="input-field">
                         <button className="btn pink lighten-1 z-depth-0">Login</button>
