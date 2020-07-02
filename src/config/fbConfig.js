@@ -4,7 +4,7 @@ import 'firebase/auth';
 import 'firebase/analytics';
 import 'firebase/storage';
 
-// Your web app's Firebase configuration
+// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyA32zJe3geHTy0nyaP8GUUtWaEo7SZgy-o",
     authDomain: "twice-51acf.firebaseapp.com",
@@ -20,5 +20,4 @@ const firebaseConfig = {
   firebase.firestore().settings({ experimentalForceLongPolling: true });
   firebase.analytics();
   
-  export const storageRef = firebase.storage().ref();
   export default firebase;
