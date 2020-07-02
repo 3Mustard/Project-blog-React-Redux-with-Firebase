@@ -3,10 +3,12 @@ import 'firebase/auth';
 import 'firebase/storage';
 
 export const signIn = (credentials) => {
+    const { email, password } = credentials;
+
     return (dispatch) => {
          firebase.auth().signInWithEmailAndPassword(
-             credentials.email,
-             credentials.password
+             email,
+             password
          ).then(() => {
              dispatch({ type: 'LOGIN_SUCCESS' });
          }).catch((error) => {
