@@ -20,5 +20,5 @@ const firebaseConfig = {
   firebase.firestore().settings({ experimentalForceLongPolling: true });
   firebase.analytics();
   
-  export const storage = firebase.storage().ref();
+  export const storageRef = firebase.storage().ref();
   export default firebase;
