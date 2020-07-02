@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/actions/authActions';
+import PicturePreview from '../misc/PicturePreview';
 
 class SignUp extends Component {
     state = {
@@ -9,7 +10,8 @@ class SignUp extends Component {
         password: '',
         firstName: '',
         lastName: '',
-        profilePicture: null
+        profilePicture: null,
+        pictureURL: null
     }
 
     handleChange = (e) => {
@@ -19,7 +21,15 @@ class SignUp extends Component {
     }
 
     handleFileChange = (e) => {
-        this.setState({ profilePicture: e.target.files[0] });
+        let reader = new FileReader();
+        let file = e.target.files[0];
+        reader.onloadend = () => {
+            this.setState({ 
+                profilePicture: file,
+                pictureURL: reader.result 
+            });
+        }
+        reader.readAsDataURL(file);
     }
 
     handleSubmit = (e) => {
@@ -57,6 +67,7 @@ class SignUp extends Component {
                     </div>
                     <div className="input-field">
                         <input type="file" id="profilePicture" onChange={this.handleFileChange}/>
+                        <PicturePreview pictureURL={this.state.pictureURL}/>
                     </div>
                     <div className="input-field">
                         <button className="btn pink lighten-1 z-depth-0">Login</button>
