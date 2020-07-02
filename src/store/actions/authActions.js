@@ -26,7 +26,6 @@ export const signOut = () => {
 export const signUp = (userInfo) => {
     const { email, password, firstName, lastName, profilePicture } = userInfo;
     const storageRef = firebase.storage().ref();
-    console.log(userInfo);
     
     return (dispatch) => {
         firebase.auth().createUserWithEmailAndPassword(
@@ -35,7 +34,6 @@ export const signUp = (userInfo) => {
         ).then((response) => {
             //get time is used to generate a random id, this is BAD in production. Please change.
             storageRef.child(`profile/${new Date().getTime()}`).put(profilePicture).then((snapshot) => {
-                console.log(snapshot)
                 firestore().collection('users').doc(response.user.uid).set({
                     firstName: firstName,
                     lastName: lastName,
