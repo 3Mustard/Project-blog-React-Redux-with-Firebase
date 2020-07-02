@@ -4,9 +4,9 @@ const initialState = {
 
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
-        //if this case happens, the state plus and error will go to the root reducer then store under the auth: key. the root reducer is our store based on the keys it has associated with reducers.
+        //if this case happens, the state plus an error will go to the root reducer then store under the auth: key. the root reducer is our store based on the keys it has associated with reducers.
         case 'LOGIN_ERROR':
-            console.log('login error');
+            console.log('login error', action.error.message);
             return {
                 ...state,
                 authError: action.error.message
