@@ -6,8 +6,10 @@ import { Redirect } from 'react-router-dom';
 // Components
 import Notifications from './Notifications';
 import ProjectList from '../projects/ProjectList';
+import PicturePreview from '../misc/PicturePreview';
 
 class Dashboard extends Component {
+
     render(){
         const { projects, notifications, auth } = this.props;
         if (!auth.uid) return <Redirect to="/signin" />;

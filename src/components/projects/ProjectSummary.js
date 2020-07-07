@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import DeleteProject from './DeleteProject';
 
 const ProjectSummary = ({project}) => {
     return (
@@ -8,6 +9,7 @@ const ProjectSummary = ({project}) => {
                 <span className="card-title">{project.title}</span>
                 <p>Posted by: <i>{project.authorFirstName + project.authorLastName}</i></p>
                 <p className="grey-text">{ moment(project.createdAt.toDate()).calendar() }</p>
+                <DeleteProject project={project} />
             </div>
         </div>
     )
