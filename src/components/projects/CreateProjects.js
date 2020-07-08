@@ -5,7 +5,8 @@ import { createProject } from '../../store/actions/projectActions';
 
 class CreateProject extends Component {
     state = {
-        title: '',
+        idol: '',
+        group: '',
         content: ''
     }
 
@@ -28,13 +29,17 @@ class CreateProject extends Component {
         return (
             <div className="container">
                 <form className="white" onSubmit={this.handleSubmit}>
-                    <h5 className="grey-text text-darken-3">Create</h5>
+                    <h5 className="grey-text text-darken-3">Post a trade</h5>
                     <div className="input-field">
-                        <label htmlFor="title">Title</label>
-                        <input type="text" id="title" onChange={this.handleChange}/>
+                        <label htmlFor="idol">Idol</label>
+                        <input type="text" id="idol" onChange={this.handleChange}/>
                     </div>
                     <div className="input-field">
-                        <label htmlFor="content">Content</label>
+                        <label htmlFor="group">Group</label>
+                        <input type="text" id="group" onChange={this.handleChange}/>
+                    </div>
+                    <div className="input-field">
+                        <label htmlFor="content">Note</label>
                         <textarea id="content" className="materialize-textarea" onChange={this.handleChange}></textarea>
                     </div>
                     <div className="input-field">

@@ -15,7 +15,8 @@ const ProjectDetails = (props) => {
       <div className="container section project-details">
         <div className="card z-depth-0">
           <div className="card-content">
-            <span className="card-title">{ project.title }</span>
+            <span className="card-title">{ project.idol }</span>
+            <p>{ project.group }</p>
             <p>{ project.content }</p>
           </div>
           <div className="card-action grey lighten-4 grey-text">
