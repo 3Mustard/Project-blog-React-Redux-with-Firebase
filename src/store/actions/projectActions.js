@@ -23,7 +23,7 @@ export const deleteProject = (project) => {
         const projectID = project.projectID; 
         firestore.collection('projects').doc(projectID).delete()
         .then(() => {
-            dispatch({ type: 'DELETE_PROJECT'});
+            dispatch({ type: 'DELETE_PROJECT', project});
         }).catch((error) => {
             dispatch({ type: 'DELETE_PROJECT_ERROR', error });
         });
