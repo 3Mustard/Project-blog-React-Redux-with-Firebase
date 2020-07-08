@@ -11,7 +11,6 @@ class DeleteProject extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.deleteProject(this.state);
-        this.props.history.push("/");
     }
 
     render() {
@@ -24,7 +23,7 @@ class DeleteProject extends Component {
         } else {
             return (
                 <div className="container">
-                    delete button
+                    <button onClick={this.handleSubmit}>Delete</button>
                 </div>
             )
         }
