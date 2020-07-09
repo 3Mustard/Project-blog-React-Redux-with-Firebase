@@ -5,7 +5,7 @@ class SearchBar extends Component {
         query: '',
         results: null
     }
-    
+
     handleChange = (e) => {
         this.setState({
             [e.target.id]: e.target.value
@@ -14,15 +14,25 @@ class SearchBar extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        this.search(this.state.query);
     }
 
-    search = (query) => {
+    search = (request) => {
+        const { projects } = this.props;
+        const query = request.toLowerCase();
+        let results = [];
 
+        projects.map( project => {
+            const idol = project.idol.toLowerCase();
+            const group = project.group.toLowerCase();
+            if ( idol === query || group === query ){
+                results.push(project);
+            }
+        });
+        console.log('these are the search results', results);
     }
 
     render() {
-        const { projects } = this.props;
-        console.log(projects)
         if ( this.state.results === null ) {
             return (
                 <div className="container">
@@ -41,7 +51,7 @@ class SearchBar extends Component {
         } else {
             return (
                 <div>
-                    <p>{this.state.results}</p>
+                    <p>search</p>
                 </div>
             )
         }
