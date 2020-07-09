@@ -1,0 +1,2 @@
+//mimick project details component structure in reguards to using a url for finding a user instead of a project.
+//this component also needs to use the url of the users id to get all projects that they have made.

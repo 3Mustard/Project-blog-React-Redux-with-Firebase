@@ -22,3 +22,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(null, mapDispatchToProps)(SignedInLinks);
+
+
+//the nav link for a users profile requires this to be setup to the store to get the auth.uid needed to get to a users profile.
