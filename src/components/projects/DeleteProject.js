@@ -14,7 +14,6 @@ class DeleteProject extends Component {
     }
 
     render() {
-        console.log(this.props)
         const { auth, project } = this.props;
         if (!auth.uid) return <Redirect to='signin'/>
 
