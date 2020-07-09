@@ -40,6 +40,7 @@ class SearchBar extends Component {
 
         return (
             <div className="section">
+                <div className="card z-0">
                     <div className="card-content">
                     <form className="white" onSubmit={this.handleSubmit}>
                         <h5 className="grey-text text-darken-3">Search</h5>
@@ -51,8 +52,10 @@ class SearchBar extends Component {
                             <button className="btn pink lighten-1 z-depth-0">Search</button>
                         </div>
                     </form>
-                    {searchResults}
+                        <h3>Search Results</h3>
+                        {searchResults}
                     </div>
+                </div>
             </div>
         )
     }
