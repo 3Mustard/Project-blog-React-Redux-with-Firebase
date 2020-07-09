@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ProjectList from '../projects/ProjectList';
 
 class SearchBar extends Component {
     state = {
@@ -30,8 +31,11 @@ class SearchBar extends Component {
             }
         });
         console.log('these are the search results', results);
+        this.setState({
+            results: results
+        });
     }
-
+    //change the else logic path to render projectlist component, passing in the search results as projects.
     render() {
         if ( this.state.results === null ) {
             return (
@@ -50,9 +54,7 @@ class SearchBar extends Component {
             )
         } else {
             return (
-                <div>
-                    <p>search</p>
-                </div>
+                <ProjectList projects={ this.state.results }/>
             )
         }
     }
