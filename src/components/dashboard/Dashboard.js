@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom';
 // Components
 import Notifications from './Notifications';
 import ProjectList from '../projects/ProjectList';
-import PicturePreview from '../misc/PicturePreview';
+import SearchBar from '../searching/SearchBar';
 
 class Dashboard extends Component {
 
@@ -16,6 +16,11 @@ class Dashboard extends Component {
         
         return (
             <div className="dashboard container">
+                <div className="row">
+                    <div className="col s12 m6 l6">
+                        <SearchBar projects={projects} />
+                    </div>
+                </div>
                 <div className="row">
                     <div className="col s12 m6">
                         <ProjectList projects={projects} />
