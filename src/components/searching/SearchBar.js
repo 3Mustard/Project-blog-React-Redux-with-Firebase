@@ -39,18 +39,20 @@ class SearchBar extends Component {
         const searchResults = this.state.results ? <ProjectList projects={this.state.results}/> : null;
 
         return (
-            <div className="container">
-                <form className="white" onSubmit={this.handleSubmit}>
-                    <h5 className="grey-text text-darken-3">Search</h5>
-                    <div className="input-field">
-                        <label htmlFor="query">Search</label>
-                        <input type="text" id="query" onChange={this.handleChange}/>
+            <div className="section">
+                    <div className="card-content">
+                    <form className="white" onSubmit={this.handleSubmit}>
+                        <h5 className="grey-text text-darken-3">Search</h5>
+                        <div className="input-field">
+                            <label htmlFor="query">Search</label>
+                            <input type="text" id="query" onChange={this.handleChange}/>
+                        </div>
+                        <div className="input-field">
+                            <button className="btn pink lighten-1 z-depth-0">Search</button>
+                        </div>
+                    </form>
+                    {searchResults}
                     </div>
-                    <div className="input-field">
-                        <button className="btn pink lighten-1 z-depth-0">Search</button>
-                    </div>
-                </form>
-                {searchResults}
             </div>
         )
     }
