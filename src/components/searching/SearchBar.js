@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ProjectList from '../projects/ProjectList';
 
+//Pass this component props with a key 'projects' to use properly
 class SearchBar extends Component {
     state = {
         query: '',
