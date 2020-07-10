@@ -48,3 +48,5 @@ export default compose(
       ];
     }),
 )(Profile);
+
+//connect to projects collection where ids match the user
