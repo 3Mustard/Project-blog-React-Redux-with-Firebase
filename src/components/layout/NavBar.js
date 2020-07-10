@@ -7,6 +7,7 @@ import SignedOutLinks from './SignedOutLinks';
 
 const NavBar = (props) => {
     const { auth, profile } = props; 
+    console.log(props.user)
     const links = auth.uid ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
 
     return (
@@ -22,7 +23,8 @@ const NavBar = (props) => {
 const mapStateToProps = (state) => {
     return {
         auth: state.firebase.auth,
-        profile: state.firebase.profile
+        profile: state.firebase.profile,
+        user: state.firebase
     }
 }
 
