@@ -16,7 +16,11 @@ class SearchBar extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.search(this.state.query);
+        const results = this.search(this.state.query);
+        console.log(results)
+        this.setState({
+            results: results
+        });
     }
 
     search = (request) => {
@@ -24,16 +28,14 @@ class SearchBar extends Component {
         const query = request.toLowerCase();
         let results = [];
 
-        projects.map( project => {
+        projects.forEach( project => {
             const idol = project.idol.toLowerCase();
             const group = project.group.toLowerCase();
             if ( idol === query || group === query ){
                 results.push(project);
             }
         });
-        this.setState({
-            results: results
-        });
+        return results;
     }
 
     render() {
