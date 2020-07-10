@@ -5,7 +5,7 @@ import { signOut } from '../../store/actions/authActions';
 
 const SignedInLinks = (props) => {
     const { auth, profile, signOut } = props;
-
+    
     return (
         <ul className="right">
             <li><NavLink to='/new/project'>New Post</NavLink></li>
@@ -30,6 +30,3 @@ const mapStateToProps = (state, ownProps) => {
   };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignedInLinks);
-
-
-//the nav link for a users profile requires this to be setup to the store to get the auth.uid needed to get to a users profile.
