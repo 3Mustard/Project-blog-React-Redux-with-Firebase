@@ -10,9 +10,9 @@ class SignUp extends Component {
         email: '',
         password: '',
         firstName: '',
-        lastName: '',
-        profilePicture: null,
-        pictureURL: null
+        lastName: ''
+        // profilePicture: null,
+        // pictureURL: null
     }
 
     handleChange = (e) => {
@@ -21,17 +21,17 @@ class SignUp extends Component {
         });
     }
 
-    handleFileChange = (e) => {
-        let reader = new FileReader();
-        let file = e.target.files[0];
-        reader.onloadend = () => {
-            this.setState({ 
-                profilePicture: file,
-                pictureURL: reader.result 
-            });
-        }
-        reader.readAsDataURL(file);
-    }
+    // handleFileChange = (e) => {
+    //     let reader = new FileReader();
+    //     let file = e.target.files[0];
+    //     reader.onloadend = () => {
+    //         this.setState({ 
+    //             profilePicture: file,
+    //             pictureURL: reader.result 
+    //         });
+    //     }
+    //     reader.readAsDataURL(file);
+    // }
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -65,10 +65,10 @@ class SignUp extends Component {
                         <label htmlFor="lastName">Last Name</label>
                         <input type="text" id="lastName" onChange={this.handleChange}/>
                     </div>
-                    <div className="input-field">
+                    {/* <div className="input-field">
                         <input type="file" id="profilePicture" onChange={this.handleFileChange}/>
                         { this.state.pictureURL ? <PicturePreview pictureURL={this.state.pictureURL}/> : null }
-                    </div>
+                    </div> */}
                     <div className="input-field">
                         <button className="btn pink lighten-1 z-depth-0">Login</button>
                     </div>                

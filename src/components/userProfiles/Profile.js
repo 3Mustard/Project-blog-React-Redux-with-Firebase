@@ -44,7 +44,7 @@ export default compose(
     firestoreConnect((props) => {
       return [
         {collection: 'users', doc: props.match.params.id, storeAs: 'user'},
-        {collection: 'projects', where: ["authorID", "==", `${props.match.params.id}`], storeAs: 'userProjects'},
+        {collection: 'projects', where: ["authorId", "==", `${props.match.params.id}`], storeAs: 'userProjects'},
       ];
     }),
     connect(mapStateToProps)
