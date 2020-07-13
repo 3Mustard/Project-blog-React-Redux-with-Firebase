@@ -6,6 +6,7 @@ import {compose} from 'redux';
 import {connect} from 'react-redux';
 import {firestoreConnect} from 'react-redux-firebase';
 import { Redirect } from 'react-router-dom';
+import ProjectList from '../projects/ProjectList';
 
 const Profile = (props) => {
   const { auth, user, userProjects } = props;
@@ -19,6 +20,7 @@ const Profile = (props) => {
             <span className="card-title">profile stuff</span>
           </div>
           <div className="card-action grey lighten-4 grey-text">
+            <ProjectList projects={userProjects} />
           </div>
         </div>
       </div>
