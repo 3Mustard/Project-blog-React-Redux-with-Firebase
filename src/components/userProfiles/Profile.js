@@ -41,13 +41,13 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 export default compose(
-    connect(mapStateToProps),
     firestoreConnect((props) => {
       return [
         {collection: 'users', doc: props.match.params.id, storeAs: 'user'},
         {collection: 'projects', where: ["authorID", "==", `${props.match.params.id}`], storeAs: 'userProjects'},
       ];
     }),
+    connect(mapStateToProps)
 )(Profile);
 
 //connect to projects collection where ids match the user
