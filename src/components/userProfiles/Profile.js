@@ -6,12 +6,11 @@ import {compose} from 'redux';
 import {connect} from 'react-redux';
 import {firestoreConnect} from 'react-redux-firebase';
 import { Redirect } from 'react-router-dom';
-import moment from 'moment';
 
 const Profile = (props) => {
-  const { auth, user } = props;
+  const { auth, user, userProjects } = props;
   if (!auth.uid) return <Redirect to='/signin'/>
-
+  console.log(userProjects);
   if (user) {
     return (
       <div className="container section project-details">
@@ -36,6 +35,7 @@ const Profile = (props) => {
 const mapStateToProps = (state, ownProps) => {
   return {
     user: state.firestore.data.user,
+    userProjects: state.firestore.ordered.userProjects,
     auth: state.firebase.auth
   };
 };
@@ -45,8 +45,16 @@ export default compose(
     firestoreConnect((props) => {
       return [
         {collection: 'users', doc: props.match.params.id, storeAs: 'user'},
+        {collection: 'projects', where: ["authorID", "==", `${props.match.params.id}`], storeAs: 'userProjects'},
       ];
     }),
 )(Profile);
 
 //connect to projects collection where ids match the user
+// The following query returns all cities with state CA:
+
+// Create a reference to the cities collection
+// var citiesRef = db.collection("cities");
+
+// Create a query against the collection.
+// var query = citiesRef.where("state", "==", "CA");
