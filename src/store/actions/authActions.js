@@ -33,7 +33,6 @@ export const signUp = (userInfo) => {
             email,
             password
         ).then((response) => {
-            //get time is used to generate a random id, this is BAD in production. Please change.
             firestore().collection('users').doc(response.user.uid).set({
                 firstName: firstName,
                 lastName: lastName,

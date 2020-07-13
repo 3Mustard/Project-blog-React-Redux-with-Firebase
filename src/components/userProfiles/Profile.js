@@ -49,12 +49,3 @@ export default compose(
     }),
     connect(mapStateToProps)
 )(Profile);
-
-//connect to projects collection where ids match the user
-// The following query returns all cities with state CA:
-
-// Create a reference to the cities collection
-// var citiesRef = db.collection("cities");
-
-// Create a query against the collection.
-// var query = citiesRef.where("state", "==", "CA");
