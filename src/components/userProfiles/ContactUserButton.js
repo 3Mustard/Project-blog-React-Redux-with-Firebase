@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { deleteProject } from '../../store/actions/projectActions';
+// import { deleteProject } from '../../store/actions/projectActions'; 
 
-class DeleteProject extends Component {
+class ContactUserButton extends Component {
     state = {
         projectID: this.props.project.id
     }
@@ -16,21 +16,20 @@ class DeleteProject extends Component {
         const { auth, project } = this.props;
 
         if (auth.uid !== project.authorId) {
-            // Add a component here if you want a different button to render
-            return null; 
-        } else {
             return (
                 <div className="container">
                     <button onClick={this.handleSubmit}>Delete</button>
                 </div>
-            )
+            );
+        } else {
+            return null;
         }
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        deleteProject: (project) => dispatch(deleteProject(project))
+        // deleteProject: (project) => dispatch(deleteProject(project))
     }
 }
 
@@ -40,4 +39,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DeleteProject);
+export default connect(mapStateToProps, mapDispatchToProps)(ContactUserButton);
