@@ -14,13 +14,15 @@ const Profile = (props) => {
   console.log(userProjects);
   if (user) {
     return (
-      <div className="container section project-details">
-        <div className="card z-depth-0">
-          <div className="card-content">
+      <div className="container">
+        <div className="row">
+          <div className="col s12 m6">
             <span className="card-title">profile stuff</span>
+            <p>options</p>
           </div>
-          <div className="card-action grey lighten-4 grey-text">
-            <ProjectList projects={userProjects} />
+          <div className="col s12 m5 offset-m1">
+            <h3>Your posts</h3>
+          <ProjectList projects={userProjects} />
           </div>
         </div>
       </div>
