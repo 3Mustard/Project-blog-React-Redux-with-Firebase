@@ -1,0 +1,1 @@
+// a message list should accept  props messages from the profile component

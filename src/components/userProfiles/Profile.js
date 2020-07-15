@@ -1,6 +1,3 @@
-//mimick project details component structure in reguards to using a url for finding a user instead of a project.
-//this component also needs to use the url of the users id to get all projects that they have made.
-
 import React from 'react';
 import {compose} from 'redux';
 import {connect} from 'react-redux';
@@ -10,7 +7,7 @@ import ProjectList from '../projects/ProjectList';
 
 const Profile = (props) => {
   const { auth, user, userProjects } = props;
-  if (!auth.uid) return <Redirect to='/signin'/>
+  if (!auth.uid || (auth.uid !== props.match.params.id)) return <Redirect to='/signin'/> 
   console.log(userProjects);
   if (user) {
     return (
@@ -18,11 +15,11 @@ const Profile = (props) => {
         <div className="row">
           <div className="col s12 m6">
             <span className="card-title">profile stuff</span>
-            <p>options</p>
+            <p>message list component</p>
           </div>
           <div className="col s12 m5 offset-m1">
             <h3>Your posts</h3>
-          <ProjectList projects={userProjects} />
+            <ProjectList projects={userProjects} />
           </div>
         </div>
       </div>
