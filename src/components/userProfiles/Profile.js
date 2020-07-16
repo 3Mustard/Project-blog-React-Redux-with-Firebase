@@ -41,8 +41,7 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-
-//should also get the users messages and pass to messagelist
+//should also get the users messages and pass to message list
 export default compose(
     firestoreConnect((props) => {
       return [
