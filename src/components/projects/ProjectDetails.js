@@ -23,6 +23,7 @@ const ProjectDetails = (props) => {
             <div>Posted by { project.authorFirstName } { project.authorLastName }</div>
             <div className="grey-text">{ moment(project.createdAt.toDate()).calendar() }</div>
           </div>
+          <DeleteOrContactProject project={project} />
         </div>
       </div>
     );

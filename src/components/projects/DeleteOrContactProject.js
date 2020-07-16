@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteProject } from '../../store/actions/projectActions';
 
+// takes in a projects paramater
 class DeleteOrContactProject extends Component {
     state = {
         projectID: this.props.project.id
