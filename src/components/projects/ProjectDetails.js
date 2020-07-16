@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {firestoreConnect} from 'react-redux-firebase';
 import { Redirect } from 'react-router-dom';
 import moment from 'moment';
+import DeleteOrContactProject from './DeleteOrContactProject';
 
 const ProjectDetails = (props) => {
   const { project, auth } = props;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteProject } from '../../store/actions/projectActions';
 
-class DeleteProject extends Component {
+class DeleteOrContactProject extends Component {
     state = {
         projectID: this.props.project.id
     }
@@ -16,14 +16,17 @@ class DeleteProject extends Component {
         const { auth, project } = this.props;
 
         if (auth.uid !== project.authorId) {
-            // Add a component here if you want a different button to render
-            return null; 
+            return (
+                <div className="container">
+                    <button>contact this user about this trade. This button should link to sendMessage</button>
+                </div>
+            );
         } else {
             return (
                 <div className="container">
                     <button onClick={this.handleSubmit}>Delete</button>
                 </div>
-            )
+            );
         }
     }
 }
@@ -40,4 +43,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DeleteProject);
+export default connect(mapStateToProps, mapDispatchToProps)(DeleteOrContactProject);

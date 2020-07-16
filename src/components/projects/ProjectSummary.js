@@ -1,6 +1,5 @@
 import React from 'react';
 import moment from 'moment';
-import DeleteProject from './DeleteProject';
 
 const ProjectSummary = ({project}) => {
     return (
