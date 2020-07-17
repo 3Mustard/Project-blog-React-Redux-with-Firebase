@@ -19,7 +19,7 @@ class DeleteOrContactProject extends Component {
         if (auth.uid !== project.authorId) {
             return (
                 <div className="container">
-                    <button>contact this user about this trade. This button should link to sendMessage</button>
+                    link to email the person
                 </div>
             );
         } else {
