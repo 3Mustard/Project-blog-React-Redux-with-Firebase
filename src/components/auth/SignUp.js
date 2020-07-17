@@ -46,6 +46,7 @@ class SignUp extends Component {
             <div className="container">
                 <form className="white" onSubmit={this.handleSubmit}>
                     <h5 className="grey-text text-darken-3">Sign Up</h5>
+                    <p className="flow-text">Please sign up with an email other users may contact you at.</p>
                     <div className="red-text text-darken-3">
                             { authError ? <h5>{authError}</h5> : null }
                     </div>
